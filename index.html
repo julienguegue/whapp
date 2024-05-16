@@ -11,7 +11,7 @@
     <script>
         var container = document.getElementById('conversation-buttons');
 
-        fetch('http://10.0.5.155:8051/get_button_count')
+        fetch('n_c.json')
         .then(response => response.json())
         .then(data => {
             for (var i = 1; i <= data.button_count; i++) {
