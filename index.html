@@ -9,12 +9,12 @@
     <h1>Regimes</h1>
     <div id="conversation-buttons"></div>
     <script>
-        const conversations = ["Conversation 1", "Conversation 2", "Conversation 3"];
+        const n_conversations = 5
         var container = document.getElementById('conversation-buttons');
 
-        for (var i = 1; i <= conversations.length; i++) {
+        for (var i = 1; i <= n_conversations; i++) {
             var button = document.createElement('button');
-            button.innerHTML = conversations[i];
+            button.innerHTML = 'Bouton ' + i;
             container.appendChild(button);
         }
     </script>
