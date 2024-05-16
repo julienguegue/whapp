@@ -9,14 +9,20 @@
     <h1>Regimes</h1>
     <div id="conversation-buttons"></div>
     <script>
-        const conversations = ["Conversation 1", "Conversation 2", "Conversation 3"];
-        var container = document.getElementById('conversation-buttons');
-
-        for (var i = 1; i <= conversations.length; i++) {
-            var button = document.createElement('button');
-            button.innerHTML = conversation[i];
-            container.appendChild(button);
-        }
+        fetch('conversation.txt')
+        .then(response => response.text())
+        .then(text => {
+            const conversations = text.split('\n');
+            const conversationButtons = document.getElementById('conversation-buttons');
+            conversations.forEach(conversation => {
+                if (conversation.trim() !== '') {
+                    const button = document.createElement('button');
+                    button.textContent = conversation;
+                    conversationButtons.appendChild(button);
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching conversations:', error));
     </script>
     
     <div id="conversation-content">
