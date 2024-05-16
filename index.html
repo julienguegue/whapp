@@ -14,7 +14,7 @@
         fetch('n_c.json')
         .then(response => response.json())
         .then(data => {
-            for (var i = 1; i <= data.button_count; i++) {
+            for (var i = 1; i <= data.count; i++) {
                 var button = document.createElement('button');
                 button.innerHTML = 'FLASK ' + i;
                 container.appendChild(button);
