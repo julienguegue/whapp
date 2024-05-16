@@ -11,12 +11,12 @@
     <script>
         var container = document.getElementById('conversation-buttons');
 
-        fetch('n_c.json')
+        fetch('https://fish-bitter-numeric.glitch.me/buttons')
         .then(response => response.json())
         .then(data => {
-            for (var i = 1; i <= data.count; i++) {
+            for (var i = 1; i <= data.buttons.length; i++) {
                 var button = document.createElement('button');
-                button.innerHTML = 'FLASK ' + i;
+                button.innerHTML = 'fBouton ' + i;
                 container.appendChild(button);
             }
         })
