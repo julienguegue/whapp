@@ -7,10 +7,19 @@
 </head>
 <body>
     <h1>Convs</h1>
-    <div id="conversation-buttons">
-        <div><button>Mon Bouton 1</button></div>
-        <div><button>Mon Bouton deuxieme</button></div>
-    </div>
+    <div id="conversation-buttons"></div>
+    <script>
+        // Nombre de boutons souhaité
+        var nombreBoutons = 5;
+        var container = document.getElementById('boutons-container');
+        
+        for (var i = 1; i <= nombreBoutons; i++) {
+            var button = document.createElement('button');
+            button.innerHTML = 'Bouton ' + i;
+            container.appendChild(button);
+        }
+    </script>
+    
     <div id="conversation-content">
         <!-- Le contenu de la conversation sera affiché ici -->
     </div>
