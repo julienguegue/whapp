@@ -9,7 +9,7 @@
     <h1>Regimes</h1>
     <div id="conversation-buttons"></div>
     <script>
-        fetch('conversation.txt')
+        fetch('convs.txt')
         .then(response => response.text())
         .then(text => {
             const conversations = text.split('\n');
