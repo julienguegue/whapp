@@ -9,14 +9,18 @@
     <h1>Regimes</h1>
     <div id="conversation-buttons"></div>
     <script>
-        const n_conversations = 5
         var container = document.getElementById('conversation-buttons');
 
-        for (var i = 1; i <= n_conversations; i++) {
-            var button = document.createElement('button');
-            button.innerHTML = 'Bouton ' + i;
-            container.appendChild(button);
-        }
+        fetch('http://10.0.5.155:8051/get_button_count')
+        .then(response => response.json())
+        .then(data => {
+            for (var i = 1; i <= data.button_count; i++) {
+                var button = document.createElement('button');
+                button.innerHTML = 'Bouton ' + i;
+                container.appendChild(button);
+            }
+        })
+        .catch(error => console.error('Error fetching button count:', error));
     </script>
 
     <div id="conversation-content">
